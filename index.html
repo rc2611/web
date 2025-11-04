@@ -1,186 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Profile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajat Choudhary | Research Profile</title>
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* ======= Base ======= */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color:  #FFFFFF;
-      color: #333;
     }
 
-    #header {
-     background-image: url('assets/fonts/bg.jpg');
-     background-size: cover; /* Adjust as needed */
-     color: #333;
-     padding: 15px;
-     margin: 0;
-     border-top-left-radius: 20px;
-     border-top-right-radius: 20px;
-     text-align: center;
-    }
-
-    #profile-pic {
-      border-radius: 50%;
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      margin-top: 20px;
-    }
-
-    #content {
-      margin: 0 auto;
-      padding: 20px;
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      color: #222;
       background-color: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 20px;
+      line-height: 1.7;
+      font-size: 17px;
     }
+header {
+  background: #f5f7f5;  /* a light gray-green tint */
+  border-bottom: 1px solid #d8ddd8;
+  padding: 1.2rem 0;
+}
 
-    h1, h2, h3 {
-      color: #333;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
 
-    p {
-      line-height: 1.6;
-    }
+nav li {
+  margin: 0 1.8rem; /* 👈 adds visible space between each tab */
+}
 
-    nav {
-      text-align: center;
-      margin-top: 20px;
-    }
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: 0.4px;
+  transition: color 0.2s ease;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 5px;
-      background-color: #e0ebeb;
-      border: 1px solid #95a5a6;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #95a5a6;
-      color: #fff;
+nav a:hover,
+nav a.active {
+  color: #00695c;
+}
+    /* ======= Main Container ======= */
+    main {
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 0 1rem;
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 3rem;
     }
 
     section h2 {
-      color: #333;
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
+      color: #004c3f;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-bottom: 1px solid #d9d9d9;
+      padding-bottom: 0.3rem;
     }
 
-    .highlight {
-      background-color: #fff4e6;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    section p {
+      margin-bottom: 1rem;
     }
 
-    .quote {
-      font-style: italic;
-      margin-top: 10px;
-      color: #666;
+    ul, ol {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
     }
 
-    .project {
-      margin-bottom: 40px;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    li {
+      margin-bottom: 0.5rem;
     }
 
-    .project h3 {
-      background-color: #95a5a6; /* Soft beige */
-      color: #333;
-      padding: 15px;
-      margin: 0;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+    a {
+      color: #00695c;
+      text-decoration: none;
     }
 
-    .project p {
-      padding: 15px;
-      margin: 0;
-      background-color: #fff;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .project img {
-      max-width: 100%;
-      border-radius: 0 0 20px 20px;
-      display: block;
+    /* ======= Profile Header ======= */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .profile-header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 2px solid #ddd;
+    }
+
+    .profile-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #00695c;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .institution {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* ======= Footer ======= */
+    footer {
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    /* ======= Gallery Section ======= */
+#gallery {
+  margin-bottom: 3rem;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+    /* ======= Responsive ======= */
+    @media (max-width: 700px) {
+      nav ul {
+        gap: 1.5rem;
+      }
+      nav a {
+        font-size: 1rem;
+      }
+      main {
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header id="header">
-    <h1 style="color: #e0ebeb; font-size: 32px; font-weight: bold;">Rajat Choudhary</h1>
-    <img src="assets/fonts/P5.jpg" alt="Profile Picture" id="profile-pic">
-   <p style="color: white; font-size: 20px; font-weight: bold;">PhD Candidate in Water Resources Engineering</p>
-  </header>
-  <div id="content">
+  <!-- ======= Header Navigation ======= -->
+  <header>
     <nav>
-      <a href="#about">About</a>
-      <a href="#interests">Interests</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    
+  </header>
+
+  <!-- ======= Main Content ======= -->
+  <main>
+    <div class="profile-header">
+      <img src="assets/fonts/P5.jpg" alt="Rajat Choudhary Profile Picture">
+      <h1>Rajat Choudhary</h1>
+      <p class="subtitle">PhD Candidate, Water Resources Engineering</p>
+      <p class="institution">Indian Institute of Technology Delhi</p>
+    </div>
+
     <section id="about">
       <h2>About Me</h2>
-      <p>I am a PhD candidate at the Indian Institute of Technology Delhi (IIT Delhi), specializing in Water Resources Engineering. My research focuses on atmospheric moisture transport and its role in hydrological extremes. I hold a Bachelor's degree in Civil Engineering from the National Institute of Technology Hamirpur (NIT Hamirpur) and a Master of Science by Research from the Indian Institute of Technology Palakkad (IIT Palakkad).</p>
-    I am currently engaged in a project that explores the fascinating relationship between atmospheric moisture transport and hydrological extremes, particularly floods. By analyzing historical data, conducting advanced modeling, and examining case studies, I aim to uncover the intricate mechanisms driving these phenomena.</section>
+      <p>
+        I am a PhD candidate at the Indian Institute of Technology Delhi (IIT Delhi), specializing in Water Resources Engineering. 
+        My research focuses on understanding the complex interactions between atmospheric processes and hydrological extremes.
+      </p>
+      <p>
+        I completed my B.Tech in Civil Engineering from the National Institute of Technology Hamirpur (NIT Hamirpur) 
+        and an M.S. by Research from the Indian Institute of Technology Palakkad (IIT Palakkad).
+      </p>
+      <p>
+        My current work explores atmospheric moisture transport and its influence on extreme rainfall and flood dynamics 
+        using both data-driven and process-based models.
+      </p>
+    </section>
 
-    <section id="interests">
+    <section id="research">
       <h2>Research Interests</h2>
-      <p>My research interests include:</p>
       <ul>
-        <li>Atmospheric Moisture Transport</li>
-        <li>Hydrological Extremes</li>
-        <li>Water Resources Management</li>
-        <li>Hydrological Modeling</li>
+        <li><strong>Atmospheric Moisture Transport</strong> – Analyzing vapor flux patterns and their hydrological implications.</li>
+        <li><strong>Hydrological Extremes</strong> – Understanding floods, droughts, and precipitation variability.</li>
+        <li><strong>Water Resources Management</strong> – Sustainable approaches under climate change.</li>
+        <li><strong>Hydrological Modeling</strong> – Enhancing predictive accuracy of SWAT and other models.</li>
       </ul>
     </section>
 
     <section id="publications">
-      <h2>Publications</h2>
-      <div class="highlight">
-        <p>Rajat & Athira, P. (2021). Calibration of hydrological models considering process interdependence: A case study of SWAT model. <em>Environmental Modelling & Software</em>, 144, 105131.</p>
-        <p>Choudhary, R., & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. <em>Environmental Earth Sciences</em>, 80, 1-16.</p>
-      </div>
+      <h2>Selected Publications</h2>
+      <ol>
+        <li><strong>Choudhary, R.</strong>, Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). 
+          Deciphering changes in flood event characteristics across India.</li>
+        <li><strong>Rajat, C.</strong> & <strong>Athira, P.</strong> (2021). Calibration of hydrological models considering process interdependence. 
+          <em>Environmental Modelling & Software</em>.</li>
+        <li><strong>Choudhary, R.</strong> & <strong>Athira, P.</strong> (2021). Effect of root zone soil moisture on hydrological flux simulation. 
+          <em>Journal of Hydrology</em>.</li>
+      </ol>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Project Title 1</h3>
-        <p>Project description goes here...</p>
-        <img src="project1.jpg" alt="Project 1">
-      </div>
-      <div class="project">
-        <h3>Project Title 2</h3>
-        <p>Project description goes here...</p>
-        <img src="project2.jpg" alt="Project 2">
-      </div>
+      <h2>Current Projects</h2>
+      <ul>
+        <li><strong>Atmospheric Moisture Transport Analysis (2023–Present):</strong> 
+          Investigating patterns of atmospheric moisture and their links with extreme rainfall using ML methods.</li>
+        <li><strong>SWAT Model Enhancement (2021–Present):</strong> 
+          Improving calibration of SWAT focusing on soil moisture and process interdependence.</li>
+        <li><strong>Flood Event Characteristics (2024–2025):</strong> 
+          Analyzing historical changes in flood patterns across India (Published 2025).</li>
+      </ul>
     </section>
+    <section id="gallery">
+  <h2>Field Visits & Conferences</h2>
+  <p>Some glimpses from my field studies, research activities, and conferences.</p>
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="field1.jpg" alt="Field visit during monsoon analysis">
+      <p>Field visit to Ganga basin for hydrological data collection (2024).</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="conference1.jpg" alt="Conference presentation">
+      <p>Presented research findings at the International Conference on Water Resources (2023).</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="field2.jpg" alt="Instrumentation setup">
+      <p>Installing soil moisture sensors during pilot study in Kerala (2022).</p>
+    </div>
+  </div>
+</section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>If you'd like to get in touch, feel free to reach out to me:</p>
-      <p>Email: rajatnit101@gmail.com</p>
-      <p>Phone: +91-8351066720</p>
+      <p><strong>Email:</strong> <a href="mailto:rajatnit101@gmail.com">rajatnit101@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+918351066720">+91 8351066720</a></p>
+      <p><strong>Profiles:</strong> 
+        <a href="#" target="_blank">Google Scholar</a> |
+        <a href="#" target="_blank">ResearchGate</a> |
+        <a href="#" target="_blank">LinkedIn</a>
+      </p>
     </section>
-  </div>
+  </main>
+
+  <footer>
+    © 2025 Rajat Choudhary — Indian Institute of Technology Delhi
+  </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,38 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajat Choudhary — Research Profile</title>
   
-  <!-- Google Fonts for crisp academic typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
-
   <style>
-    /* ======= CSS Reset & Variables ======= -->
+    /* ======= CSS Reset ======= */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    :root {
-      --primary: #0f2c59;      /* Academic Navy */
-      --secondary: #216ad9;    /* Accent Blue */
-      --text-main: #2d3748;    /* Dark Charcoal */
-      --text-muted: #4a5568;   /* Gray for metadata */
-      --bg-light: #f8fafc;     /* Off-white background */
-      --border-color: #e2e8f0; /* Subtle border */
-    }
-
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--text-main);
-      background-color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #2d3748;
+      background-color: #ffffff;
       line-height: 1.6;
       font-size: 16px;
     }
 
     a {
-      color: var(--secondary);
+      color: #216ad9;
       text-decoration: none;
     }
 
@@ -44,10 +30,10 @@
       text-decoration: underline;
     }
 
-    /* ======= Top Navigation Bar ======= -->
+    /* ======= Top Navigation Bar ======= */
     header {
       background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #e2e8f0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -65,8 +51,7 @@
     .nav-brand {
       font-weight: 700;
       font-size: 1.15rem;
-      color: var(--primary);
-      letter-spacing: -0.3px;
+      color: #0f2c59;
     }
 
     nav ul {
@@ -76,17 +61,16 @@
     }
 
     nav a {
-      color: var(--text-muted);
+      color: #4a5568;
       font-weight: 500;
       font-size: 0.95rem;
-      transition: color 0.2s ease;
     }
 
     nav a:hover, nav a.active {
-      color: var(--primary);
+      color: #0f2c59;
     }
 
-    /* ======= Main Academic Grid Layout ======= -->
+    /* ======= Main Academic Grid Layout ======= */
     .wrapper {
       max-width: 1100px;
       margin: 3rem auto;
@@ -104,10 +88,10 @@
       }
     }
 
-    /* ======= Sidebar Profile Card ======= -->
+    /* ======= Sidebar Profile Card ======= */
     aside.profile-sidebar {
-      background: var(--bg-light);
-      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 8px;
       padding: 2rem 1.5rem;
       height: fit-content;
@@ -127,14 +111,14 @@
     .profile-sidebar h1 {
       font-size: 1.35rem;
       font-weight: 700;
-      color: var(--primary);
+      color: #0f2c59;
       margin-bottom: 0.25rem;
     }
 
     .profile-sidebar .title {
       font-size: 0.95rem;
       font-weight: 500;
-      color: var(--text-muted);
+      color: #4a5568;
       margin-bottom: 0.25rem;
     }
 
@@ -143,7 +127,7 @@
       color: #64748b;
       margin-bottom: 1.5rem;
       padding-bottom: 1.2rem;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .contact-block {
@@ -158,7 +142,7 @@
     }
 
     .contact-block strong {
-      color: var(--primary);
+      color: #0f2c59;
       display: inline-block;
       width: 65px;
     }
@@ -168,19 +152,16 @@
       flex-direction: column;
       gap: 0.6rem;
       text-align: left;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid #e2e8f0;
       padding-top: 1.2rem;
     }
 
     .profile-links a {
       font-size: 0.9rem;
       font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
-    /* ======= Main Content Area ======= -->
+    /* ======= Main Content Area ======= */
     main.content {
       display: flex;
       flex-direction: column;
@@ -190,15 +171,15 @@
     section h2 {
       font-size: 1.4rem;
       font-weight: 700;
-      color: var(--primary);
+      color: #0f2c59;
       margin-bottom: 1rem;
       padding-bottom: 0.3rem;
-      border-bottom: 2px solid var(--border-color);
+      border-bottom: 2px solid #e2e8f0;
     }
 
     section p {
       margin-bottom: 1rem;
-      color: var(--text-main);
+      color: #2d3748;
     }
 
     /* Research Interests Tags */
@@ -211,7 +192,7 @@
 
     .tag {
       background: #eff6ff;
-      color: var(--secondary);
+      color: #216ad9;
       padding: 0.4rem 0.8rem;
       border-radius: 6px;
       font-size: 0.88rem;
@@ -219,13 +200,14 @@
       border: 1px solid #dbeafe;
     }
 
-    /* Academic Lists / Education / Experience */
+    /* CV Items */
     .cv-item {
       margin-bottom: 1.2rem;
     }
 
     .cv-item-header {
       display: flex;
+      justify-common: space-between;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
@@ -233,17 +215,17 @@
 
     .cv-item-title {
       font-weight: 600;
-      color: var(--text-main);
+      color: #2d3748;
     }
 
     .cv-item-date {
       font-size: 0.88rem;
-      color: var(--text-muted);
+      color: #4a5568;
     }
 
     .cv-item-subtitle {
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: #4a5568;
     }
 
     /* Publications List */
@@ -269,24 +251,24 @@
       height: 150px;
       object-fit: cover;
       border-radius: 6px;
-      border: 1px solid var(--border-color);
+      border: 1px solid #e2e8f0;
     }
 
     .gallery-card p {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #4a5568;
       margin-top: 0.4rem;
     }
 
-    /* ======= Footer ======= -->
+    /* ======= Footer ======= */
     footer {
       max-width: 1100px;
       margin: 4rem auto 2rem auto;
       padding: 1.5rem 2rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid #e2e8f0;
       text-align: center;
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #4a5568;
     }
   </style>
 </head>

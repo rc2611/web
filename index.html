@@ -1,504 +1,395 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajat Choudhary | Ph.D. Candidate & Researcher</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            oxford: '#002147',
-            tealAccent: '#0D5C75',
-            sand: '#F7F5F0',
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
-            sans: ['"Inter"', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1; 
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #002147; 
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #0D5C75; 
-    }
-
-    /* Animation Classes */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .animate-on-scroll.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Navigation Hover Effects */
-    .nav-link {
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #0D5C75;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-  </style>
-</head>
-
-<body class="font-sans text-gray-800 bg-sand antialiased leading-relaxed">
-
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex-shrink-0">
-          <a href="#" class="font-serif font-bold text-xl text-oxford tracking-wide">R.C.</a>
-        </div>
-        <!-- Desktop Nav -->
-        <div class="hidden md:block">
-          <ul class="flex space-x-8 text-sm font-medium text-gray-700">
-            <li><a href="#about" class="nav-link hover:text-tealAccent transition-colors">About</a></li>
-            <li><a href="#research" class="nav-link hover:text-tealAccent transition-colors">Research</a></li>
-            <li><a href="#education" class="nav-link hover:text-tealAccent transition-colors">Education</a></li>
-            <li><a href="#publications" class="nav-link hover:text-tealAccent transition-colors">Publications</a></li>
-            <li><a href="#gallery" class="nav-link hover:text-tealAccent transition-colors">Gallery</a></li>
-            <li><a href="#contact" class="nav-link hover:text-tealAccent transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <!-- Mobile menu button -->
-        <div class="md:hidden flex items-center">
-          <button id="mobile-menu-btn" class="text-gray-700 hover:text-oxford focus:outline-none">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile Nav -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-      <ul class="px-4 pt-2 pb-4 space-y-2 text-center text-sm font-medium text-gray-700">
-        <li><a href="#about" class="block py-2 hover:text-tealAccent hover:bg-gray-50 rounded">About</a></li>
-        <li><a href="#research" class="block py-2 hover:text-tealAccent hover:bg-gray-50 rounded">Research</a></li>
-        <li><a href="#education" class="block py-2 hover:text-tealAccent hover:bg-gray-50 rounded">Education</a></li>
-        <li><a href="#publications" class="block py-2 hover:text-tealAccent hover:bg-gray-50 rounded">Publications</a></li>
-        <li><a href="#gallery" class="block py-2 hover:text-tealAccent hover:bg-gray-50 rounded">Gallery</a></li>
-        <li><a href="#contact" class="block py-2 hover:text-tealAccent hover:bg-gray-50 rounded">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="relative bg-oxford overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-oxford to-tealAccent opacity-90 z-0"></div>
-    <!-- Decorative background element -->
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSI+PC9jaXJjbGU+Cjwvc3ZnPg==')] z-0"></div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajat Choudhary | Academic Research Profile | IIT Delhi</title>
     
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col md:flex-row items-center justify-between">
-      
-      <div class="text-center md:text-left md:w-2/3 pr-0 md:pr-8 mb-10 md:mb-0 animate-on-scroll">
-        <p class="text-teal-200 text-sm md:text-base font-medium tracking-widest uppercase mb-3">Portfolio & Research Profile</p>
-        <h1 class="font-serif text-4xl md:text-6xl text-white font-bold leading-tight mb-4">
-          Rajat Choudhary
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-200 font-light mb-2">
-          Ph.D. Candidate, Water Resources Engineering
-        </p>
-        <p class="text-lg text-teal-100 flex items-center justify-center md:justify-start gap-2">
-          <i class="fas fa-university text-sm"></i> Indian Institute of Technology Delhi
-        </p>
+    <!-- Tailwind CSS CDN for utility grid and layout spacing -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oxford: '#002147',
+                        slateblue: '#1a365d',
+                        charcoal: '#1a202c',
+                        hairline: '#e2e8f0',
+                        accentblue: '#0056b3'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ======= MANDATORY GLOBAL ZERO-ITALICS OVERRIDE ======= */
+        * {
+            box-sizing: border-box;
+            font-style: normal !important; /* STRICT: No italics across all elements */
+        }
+
+        /* ======= BASE TYPOGRAPHY & CANVAS ======= */
+        body {
+            font-family: "Baskerville Old Face", "Times New Roman", Times, Georgia, serif;
+            background-color: #ffffff;
+            color: #1a202c;
+            font-size: 19px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Headings Hierarchy */
+        h1, h2, h3, h4 {
+            font-family: "Baskerville Old Face", "Times New Roman", Times, Georgia, serif;
+            font-weight: 700;
+        }
+
+        /* H2 Section Headings: 28px, Oxford Navy Blue with fine hairline separator */
+        h2.section-heading {
+            font-size: 28px;
+            color: #002147;
+            font-weight: 700;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 52px;
+            margin-bottom: 24px;
+            letter-spacing: 0.01em;
+        }
+
+        /* H3 Subheadings: 22px, Deep Slate Blue */
+        h3.sub-heading {
+            font-size: 22px;
+            color: #1a365d;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        /* Body Paragraphs: 19px, Line Height 1.8 */
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #1a202c;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Top Navigation Links: 17px */
+        .nav-link {
+            color: #ffffff;
+            font-size: 17px;
+            padding: 6px 14px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: #cce3de;
+            border-bottom: 2px solid #cce3de;
+        }
+
+        /* Captions & Dates: 16px */
+        .caption-text, .date-text, .meta-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* Links: Clean underline without boxy buttons */
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            border-bottom: 1px solid #0056b3;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+        a:hover {
+            color: #002147;
+            border-bottom: 2px solid #002147;
+        }
+
+        /* Bibliography Numbered Citation Styling */
+        ol.publication-list {
+            list-style-type: decimal;
+            margin-left: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        ol.publication-list li {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+            padding-left: 0.5rem;
+        }
+
+        /* Section Hairline Divider */
+        .section-hairline {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 48px 0;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ======= 1. SINGLE TOP STICKY NAVIGATION BAR ======= -->
+    <nav class="sticky top-0 z-50 bg-[#002147] shadow-md border-b border-[#1a365d]">
+        <div class="max-w-[1040px] mx-auto px-6 py-3 flex flex-wrap items-center justify-between">
+            <a href="#" class="text-white font-bold text-lg tracking-wider border-none hover:border-none">
+                RAJAT CHOUDHARY
+            </a>
+            <div class="flex flex-wrap items-center space-x-2 sm:space-x-6">
+                <a href="#about" class="nav-link border-none">About</a>
+                <a href="#research" class="nav-link border-none">Research</a>
+                <a href="#education" class="nav-link border-none">Education</a>
+                <a href="#publications" class="nav-link border-none">Publications</a>
+                <a href="#gallery" class="nav-link border-none">Gallery</a>
+                <a href="#contact" class="nav-link border-none">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= 2. HERO SECTION ======= -->
+    <header class="relative w-full bg-cover bg-center py-20 px-6 text-center" 
+            style="background-image: linear-gradient(rgba(0, 33, 71, 0.88), rgba(0, 33, 71, 0.88)), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80');">
         
-        <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-          <a href="#contact" class="px-6 py-3 bg-white text-oxford font-medium rounded-sm shadow-lg hover:bg-gray-100 transition-colors">
-            Get in Touch
-          </a>
-          <a href="#publications" class="px-6 py-3 border border-white text-white font-medium rounded-sm hover:bg-white/10 transition-colors">
-            View Publications
-          </a>
-        </div>
-      </div>
-
-      <div class="md:w-1/3 flex justify-center animate-on-scroll" style="transition-delay: 200ms;">
-        <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full p-1 bg-white/20 backdrop-blur-sm shadow-2xl">
-          <img src="assets/fonts/P5.jpg" alt="Rajat Choudhary" 
-               onerror="this.src='https://placehold.co/400x400/002147/ffffff?text=RC'"
-               class="w-full h-full object-cover rounded-full border-4 border-white">
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Main Content Area -->
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
-
-    <!-- About Section -->
-    <section id="about" class="animate-on-scroll scroll-mt-24">
-      <div class="flex items-center gap-4 mb-8">
-        <div class="h-px bg-gray-300 flex-1"></div>
-        <h2 class="font-serif text-3xl text-oxford font-bold">About Me</h2>
-        <div class="h-px bg-gray-300 w-12"></div>
-      </div>
-      
-      <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-gray-600 space-y-5 text-lg leading-relaxed">
-        <p>
-          <span class="float-left text-5xl font-serif text-tealAccent leading-none pr-2 pt-1">I</span> am a Ph.D. candidate at the Indian Institute of Technology Delhi (IIT Delhi), specializing in Water Resources Engineering. My research fundamentally focuses on understanding the complex interactions between atmospheric processes and hydrological extremes.
-        </p>
-        <p>
-          I completed my B.Tech in Civil Engineering from the National Institute of Technology Hamirpur (NIT Hamirpur) and an M.S. by Research from the Indian Institute of Technology Palakkad (IIT Palakkad). 
-        </p>
-        <p>
-          Currently, my work explores atmospheric moisture transport and its direct influence on extreme rainfall and flood dynamics. By employing a synthesis of data-driven methodologies and process-based models, I aim to enhance our predictive capabilities and understanding of changing climate paradigms.
-        </p>
-      </div>
-    </section>
-
-    <!-- Research Interests -->
-    <section id="research" class="animate-on-scroll scroll-mt-24">
-      <div class="flex items-center gap-4 mb-8">
-        <div class="h-px bg-gray-300 flex-1"></div>
-        <h2 class="font-serif text-3xl text-oxford font-bold">Research Interests</h2>
-        <div class="h-px bg-gray-300 w-12"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Card 1 -->
-        <div class="bg-white p-6 rounded-md shadow-sm border-t-4 border-tealAccent hover:shadow-md transition-shadow">
-          <div class="text-tealAccent text-2xl mb-3"><i class="fas fa-wind"></i></div>
-          <h3 class="font-serif text-xl text-oxford font-semibold mb-2">Atmospheric Moisture Transport</h3>
-          <p class="text-gray-600 text-sm">Analyzing vapor flux patterns and their broad hydrological implications across varying topographies.</p>
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-white p-6 rounded-md shadow-sm border-t-4 border-tealAccent hover:shadow-md transition-shadow">
-          <div class="text-tealAccent text-2xl mb-3"><i class="fas fa-water"></i></div>
-          <h3 class="font-serif text-xl text-oxford font-semibold mb-2">Hydrological Extremes</h3>
-          <p class="text-gray-600 text-sm">Investigating the mechanics underlying floods, droughts, and unprecedented precipitation variability.</p>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white p-6 rounded-md shadow-sm border-t-4 border-tealAccent hover:shadow-md transition-shadow">
-          <div class="text-tealAccent text-2xl mb-3"><i class="fas fa-leaf"></i></div>
-          <h3 class="font-serif text-xl text-oxford font-semibold mb-2">Water Resources Management</h3>
-          <p class="text-gray-600 text-sm">Developing sustainable, adaptive approaches to manage water resources amidst global climate change.</p>
-        </div>
-        <!-- Card 4 -->
-        <div class="bg-white p-6 rounded-md shadow-sm border-t-4 border-tealAccent hover:shadow-md transition-shadow">
-          <div class="text-tealAccent text-2xl mb-3"><i class="fas fa-laptop-code"></i></div>
-          <h3 class="font-serif text-xl text-oxford font-semibold mb-2">Hydrological Modeling</h3>
-          <p class="text-gray-600 text-sm">Enhancing the predictive accuracy and efficiency of process-based models like SWAT.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="animate-on-scroll scroll-mt-24">
-      <div class="flex items-center gap-4 mb-10">
-        <div class="h-px bg-gray-300 flex-1"></div>
-        <h2 class="font-serif text-3xl text-oxford font-bold">Academic Journey</h2>
-        <div class="h-px bg-gray-300 w-12"></div>
-      </div>
-
-      <div class="relative border-l-2 border-teal-100 ml-3 md:ml-6 space-y-10">
-        
-        <!-- Timeline Item 1 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-tealAccent border-4 border-sand"></div>
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <span class="text-xs font-bold text-tealAccent uppercase tracking-wider block mb-1">Sep 2020 - Dec 2025</span>
-            <h3 class="font-serif text-xl text-oxford font-bold">Ph.D. in Water Resources Engineering</h3>
-            <p class="text-gray-700 font-medium mb-2">Indian Institute of Technology (IIT) Delhi</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-gray-300 border-4 border-sand"></div>
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">July 2018 - July 2020</span>
-            <h3 class="font-serif text-xl text-oxford font-bold">M.S. (Research) in Water Resources</h3>
-            <p class="text-gray-700 font-medium mb-2">Indian Institute of Technology (IIT) Palakkad</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-gray-300 border-4 border-sand"></div>
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">July 2018 - Dec 2018</span>
-            <h3 class="font-serif text-xl text-oxford font-bold">Coursework: Semester Exchange Program</h3>
-            <p class="text-gray-700 font-medium mb-2">Indian Institute of Technology (IIT) Madras</p>
-            <p class="text-sm text-gray-500">M.S. (Research) in Water Resources equivalent coursework.</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item 4 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-gray-300 border-4 border-sand"></div>
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">July 2013 - June 2017</span>
-            <h3 class="font-serif text-xl text-oxford font-bold">B.Tech in Civil Engineering</h3>
-            <p class="text-gray-700 font-medium mb-2">National Institute of Technology (NIT) Hamirpur</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="animate-on-scroll scroll-mt-24">
-      <div class="flex items-center gap-4 mb-8">
-        <div class="h-px bg-gray-300 flex-1"></div>
-        <h2 class="font-serif text-3xl text-oxford font-bold">Selected Publications</h2>
-        <div class="h-px bg-gray-300 w-12"></div>
-      </div>
-
-      <div class="space-y-4 text-gray-700">
-        
-        <div class="group bg-white p-5 rounded-md border-l-4 border-transparent hover:border-tealAccent hover:bg-gray-50 transition-all flex items-start gap-4 shadow-sm">
-          <div class="text-gray-400 group-hover:text-tealAccent pt-1">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <div>
-            <p class="leading-relaxed">
-              <span class="font-semibold text-oxford">Choudhary, R.</span>, Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). 
-              <span class="italic">Deciphering the changes in spatio-temporal characteristics of flood events across India.</span> 
-              Hydrological Sciences Journal, 1-15.
+        <div class="max-w-[1040px] mx-auto flex flex-col items-center justify-center">
+            <!-- Centered 160px Circular Profile Photo -->
+            <img src="assets/fonts/P5.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';"
+                 alt="Rajat Choudhary Profile Picture" 
+                 class="w-[160px] h-[160px] object-cover rounded-full mb-6 border-2 border-white/80" />
+            
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-3 tracking-wide">
+                Rajat Choudhary
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-100 font-medium mb-2">
+                PhD Candidate in Water Resources Engineering
             </p>
-          </div>
-        </div>
-
-        <div class="group bg-white p-5 rounded-md border-l-4 border-transparent hover:border-tealAccent hover:bg-gray-50 transition-all flex items-start gap-4 shadow-sm">
-          <div class="text-gray-400 group-hover:text-tealAccent pt-1">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <div>
-            <p class="leading-relaxed">
-              <span class="font-semibold text-oxford">Choudhary, R.</span>, & Athira, P. (2021). 
-              <span class="italic">Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes.</span> 
-              Environmental Earth Sciences, 80(18).
+            <p class="text-base md:text-lg text-slate-200 tracking-wide">
+                Department of Civil Engineering | Indian Institute of Technology Delhi
             </p>
-          </div>
         </div>
+    </header>
 
-        <div class="group bg-white p-5 rounded-md border-l-4 border-transparent hover:border-tealAccent hover:bg-gray-50 transition-all flex items-start gap-4 shadow-sm">
-          <div class="text-gray-400 group-hover:text-tealAccent pt-1">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <div>
-            <p class="leading-relaxed">
-              <span class="font-semibold text-oxford">Rajat</span>, & Athira, P. (2021). 
-              <span class="italic">Calibration of hydrological models considering process interdependence: A case study of SWAT model.</span>
+    <!-- ======= 3. MAIN SPREAD EDITORIAL CONTENT (MAX-WIDTH 1040PX) ======= -->
+    <main class="max-w-[1040px] mx-auto px-6 py-8 bg-white">
+
+        <!-- SECTION: ABOUT ME -->
+        <section id="about" class="scroll-mt-20">
+            <h2 class="section-heading">About Me</h2>
+            <p>
+                I am a PhD candidate in Water Resources Engineering at the Indian Institute of Technology Delhi (IIT Delhi), specializing in physical hydrology, monsoonal atmospheric processes, and hydro-climatological extremes. My research focuses on understanding the multi-scale atmospheric moisture transport dynamics that dictate extreme rainfall distribution and flood risk across South Asia using both data-driven diagnostic pipelines and process-based numerical models.
             </p>
-          </div>
+            <p>
+                My academic foundation spans several premier engineering institutes in India. I completed my Bachelor of Technology (B.Tech) in Civil Engineering at the National Institute of Technology Hamirpur (NIT Hamirpur). I subsequently earned my M.S. by Research in Water Resources Engineering at the Indian Institute of Technology Palakkad (IIT Palakkad), during which I was selected for a competitive semester exchange program at the Indian Institute of Technology Madras (IIT Madras) to undertake advanced computational fluid dynamics and hydrological modeling coursework.
+            </p>
+            <p>
+                At IIT Delhi, my doctoral research bridges atmospheric physics and surface hydrology to unravel the spatial and temporal predictability of severe hydrometeorological events under climate variability.
+            </p>
+        </section>
+
+        <hr class="section-hairline" />
+
+        <!-- SECTION: RESEARCH DETAILS -->
+        <section id="research" class="scroll-mt-20">
+            <h2 class="section-heading">Research Details</h2>
+            
+            <p>
+                My primary research investigates the atmospheric moisture transport pathways that drive extreme precipitation and catastrophic flooding across major Indian river basins. Central to this inquiry is a rigorous diagnostic evaluation of a comprehensive 40-year daily historical hydro-climatological dataset spanning 1981 through 2020. 
+            </p>
+
+            <h3 class="sub-heading">Monsoonal Dynamics & Extreme Event Synchronization</h3>
+            <p>
+                Focusing on the June–July–August–September (JJAS) Indian Summer Monsoon season—with specialized emphasis on July weather dynamics when moisture convergence peaks—my work isolates high-threshold extreme precipitation events exceeding the 90th percentile. Using advanced non-linear event synchronization algorithms and lagged causality frameworks, I map the exact physical mechanisms through which atmospheric vapor fluxes transition into localized severe rainfall spells.
+            </p>
+
+            <h3 class="sub-heading">Global Climate Teleconnections & SST Reanalysis</h3>
+            <p>
+                To understand systemic drivers beyond continental boundaries, my research deciphers coupled ocean-atmosphere teleconnections linking Indian monsoon extremes to planetary climate modes. This includes quantifying phase dependencies and lagged correlations with the Pacific Decadal Oscillation (PDO), El Niño-Southern Oscillation (ENSO), Indian Ocean Dipole (IOD), Southern Annular Mode (SAM), Arctic Oscillation (AO), and North Atlantic Oscillation (NAO). 
+            </p>
+            <p>
+                Global Ocean Data Assimilation System (GODAS) Sea Surface Temperature (SST) reanalysis datasets are integrated into computational pipelines to track anomalous oceanic thermal signatures that precede atmospheric flux surges over South Asia.
+            </p>
+
+            <h3 class="sub-heading">Hydrological Modeling & SWAT Flux Accounting</h3>
+            <p>
+                Complementing data-driven analyses, I utilize the Soil and Water Assessment Tool (SWAT) to model catchment-scale water balances. My methodological contributions focus on process-interdependent calibration techniques that refine root zone soil moisture simulation. By explicitly accounting for soil moisture dynamics, my models improve the simulation accuracy of both surface runoff and subsurface hydrological fluxes during extreme monsoonal spells.
+            </p>
+        </section>
+
+        <hr class="section-hairline" />
+
+        <!-- SECTION: EDUCATION -->
+        <section id="education" class="scroll-mt-20">
+            <h2 class="section-heading">Education</h2>
+            
+            <div class="space-y-6 my-6">
+                <!-- IIT Delhi -->
+                <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
+                        <h3 class="text-xl font-bold text-[#002147]">Indian Institute of Technology (IIT) Delhi</h3>
+                        <span class="date-text font-semibold text-[#1a365d]">Sep 2020 – Dec 2025</span>
+                    </div>
+                    <p class="text-lg font-semibold text-[#1a365d] mb-1">Ph.D. in Water Resources Engineering</p>
+                    <p class="text-[19px] text-[#1a202c]">
+                        Department of Civil Engineering. Doctoral research on atmospheric moisture transport, extreme monsoonal precipitation, and ocean-atmosphere teleconnections across Indian river basins.
+                    </p>
+                </div>
+
+                <div class="border-t border-[#e2e8f0] pt-4"></div>
+
+                <!-- IIT Palakkad -->
+                <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
+                        <h3 class="text-xl font-bold text-[#002147]">Indian Institute of Technology (IIT) Palakkad</h3>
+                        <span class="date-text font-semibold text-[#1a365d]">July 2018 – July 2020</span>
+                    </div>
+                    <p class="text-lg font-semibold text-[#1a365d] mb-1">MS (Research) in Water Resources Engineering</p>
+                    <p class="text-[19px] text-[#1a202c]">
+                        Thesis focused on process interdependence in hydrological model calibration and root zone soil moisture simulation within the SWAT framework.
+                    </p>
+                </div>
+
+                <div class="border-t border-[#e2e8f0] pt-4"></div>
+
+                <!-- IIT Madras -->
+                <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
+                        <h3 class="text-xl font-bold text-[#002147]">Indian Institute of Technology (IIT) Madras</h3>
+                        <span class="date-text font-semibold text-[#1a365d]">July 2018 – Dec 2018</span>
+                    </div>
+                    <p class="text-lg font-semibold text-[#1a365d] mb-1">MS Research Semester Exchange Program</p>
+                    <p class="text-[19px] text-[#1a202c]">
+                        Advanced coursework in computational surface water hydraulics, fluid mechanics, and stochastic hydrology.
+                    </p>
+                </div>
+
+                <div class="border-t border-[#e2e8f0] pt-4"></div>
+
+                <!-- NIT Hamirpur -->
+                <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
+                        <h3 class="text-xl font-bold text-[#002147]">National Institute of Technology (NIT) Hamirpur</h3>
+                        <span class="date-text font-semibold text-[#1a365d]">July 2013 – June 2017</span>
+                    </div>
+                    <p class="text-lg font-semibold text-[#1a365d] mb-1">B.Tech in Civil Engineering</p>
+                    <p class="text-[19px] text-[#1a202c]">
+                        Four-year undergraduate degree program with specialized training in water resources engineering, hydraulics, and structural design.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-hairline" />
+
+        <!-- SECTION: PUBLICATIONS -->
+        <section id="publications" class="scroll-mt-20">
+            <h2 class="section-heading">Selected Publications</h2>
+            
+            <ol class="publication-list">
+                <li>
+                    Rajat, & Athira, P. (2021). Calibration of hydrological models considering process interdependence: A case study of SWAT model.
+                </li>
+                <li>
+                    Choudhary, R., & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. Environmental Earth Sciences, 80(18).
+                </li>
+                <li>
+                    Choudhary, R., Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). Deciphering the changes in spatio-temporal characteristics of flood events across India. Hydrological Sciences Journal, 1-15.
+                </li>
+            </ol>
+        </section>
+
+        <hr class="section-hairline" />
+
+        <!-- SECTION: SINGLE-ROW GALLERY (3 FIGURES) -->
+        <section id="gallery" class="scroll-mt-20">
+            <h2 class="section-heading">Field Visits & Conferences</h2>
+            <p class="mb-6">
+                Photographs from hydrological field measurements, environmental sensor installations, and academic conference presentations.
+            </p>
+
+            <!-- Single horizontal row of 3 figures, strictly no frames or shadow boxes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-6">
+                <!-- Figure 1 -->
+                <div>
+                    <img src="field1.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80';"
+                         alt="Field visit during monsoon analysis" 
+                         class="w-full h-[220px] object-cover" />
+                    <p class="caption-text mt-3 text-left">
+                        Field visit to Ganga basin for hydrological data collection (2024).
+                    </p>
+                </div>
+
+                <!-- Figure 2 -->
+                <div>
+                    <img src="conference1.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80';"
+                         alt="Conference presentation" 
+                         class="w-full h-[220px] object-cover" />
+                    <p class="caption-text mt-3 text-left">
+                        Presented research findings at the International Conference on Water Resources (2023).
+                    </p>
+                </div>
+
+                <!-- Figure 3 -->
+                <div>
+                    <img src="field2.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80';"
+                         alt="Instrumentation setup" 
+                         class="w-full h-[220px] object-cover" />
+                    <p class="caption-text mt-3 text-left">
+                        Installing soil moisture sensors during pilot study in Kerala (2022).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-hairline" />
+
+        <!-- SECTION: CONTACT -->
+        <section id="contact" class="scroll-mt-20 mb-12">
+            <h2 class="section-heading">Contact</h2>
+            <p class="mb-6">
+                For academic inquiries, publication reprints, or postdoctoral research opportunities, please feel free to reach out via email or connect through academic networks:
+            </p>
+
+            <div class="space-y-3 text-[19px]">
+                <p><strong>Email:</strong> <a href="mailto:rajaniti1101@gmail.com">rajaniti1101@gmail.com</a> | <a href="mailto:rajatnit101@gmail.com">rajatnit101@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+918351066720">+91 8351066720</a></p>
+                <p><strong>Academic Profiles:</strong> 
+                    <a href="https://scholar.google.com/citations?user=Mpm2EIMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> &nbsp;|&nbsp; 
+                    <a href="https://www.researchgate.net/profile/Rajat-Choudhary-3/publications" target="_blank" rel="noopener">ResearchGate</a> &nbsp;|&nbsp; 
+                    <a href="https://www.linkedin.com/in/rajat-choudhary-680724368/" target="_blank" rel="noopener">LinkedIn</a>
+                </p>
+                <p class="pt-2">
+                    <strong>Institutional Address:</strong><br />
+                    Department of Civil Engineering,<br />
+                    Indian Institute of Technology Delhi,<br />
+                    Hauz Khas, New Delhi - 110016, India.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======= 4. FORMAL FOOTER ======= -->
+    <footer class="bg-[#002147] text-white py-8 px-6 border-t border-[#1a365d]">
+        <div class="max-w-[1040px] mx-auto text-center space-y-2">
+            <p class="text-lg tracking-wide font-semibold text-slate-100">
+                © 2025 Rajat Choudhary — Indian Institute of Technology Delhi
+            </p>
+            <p class="caption-text text-slate-300">
+                Department of Civil Engineering | Water Resources Engineering
+            </p>
         </div>
+    </footer>
 
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="animate-on-scroll scroll-mt-24">
-      <div class="flex items-center gap-4 mb-4">
-        <div class="h-px bg-gray-300 flex-1"></div>
-        <h2 class="font-serif text-3xl text-oxford font-bold">Field Visits & Conferences</h2>
-        <div class="h-px bg-gray-300 w-12"></div>
-      </div>
-      <p class="text-gray-600 mb-8 text-center text-lg">Glimpses from field studies, instrumentation setups, and academic symposiums.</p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        
-        <!-- Gallery Item 1 -->
-        <div class="group rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 flex flex-col">
-          <div class="relative overflow-hidden h-56 bg-gray-200">
-            <img src="field1.jpg" alt="Field visit during monsoon analysis" 
-                 onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Ganga+Basin+Field+Work'"
-                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
-            <div class="absolute inset-0 bg-oxford/10 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-4 flex-1">
-            <p class="text-sm text-gray-700 leading-snug">Field visit to Ganga basin for complex hydrological data collection (2024).</p>
-          </div>
-        </div>
-
-        <!-- Gallery Item 2 -->
-        <div class="group rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 flex flex-col">
-          <div class="relative overflow-hidden h-56 bg-gray-200">
-            <img src="conference1.jpg" alt="Conference presentation" 
-                 onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=International+Conference'"
-                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
-            <div class="absolute inset-0 bg-oxford/10 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-4 flex-1">
-            <p class="text-sm text-gray-700 leading-snug">Presenting pivotal research findings at the International Conference on Water Resources (2023).</p>
-          </div>
-        </div>
-
-        <!-- Gallery Item 3 -->
-        <div class="group rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 flex flex-col">
-          <div class="relative overflow-hidden h-56 bg-gray-200">
-            <img src="field2.jpg" alt="Instrumentation setup" 
-                 onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Kerala+Pilot+Study'"
-                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
-            <div class="absolute inset-0 bg-oxford/10 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-4 flex-1">
-            <p class="text-sm text-gray-700 leading-snug">Installing advanced soil moisture sensors during a pilot study in Kerala (2022).</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Contact & Footer Section -->
-  <footer id="contact" class="bg-oxford text-white pt-16 pb-8 border-t-[6px] border-tealAccent mt-12 animate-on-scroll">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-        
-        <div>
-          <h2 class="font-serif text-3xl font-bold mb-4">Get In Touch</h2>
-          <p class="text-gray-300 mb-6 font-light leading-relaxed">
-            Interested in collaboration, reviewing publications, or discussing the latest in hydrological modeling? Please reach out.
-          </p>
-          <div class="space-y-4">
-            <a href="mailto:rajatnit101@gmail.com" class="flex items-center gap-3 text-gray-200 hover:text-white transition-colors group">
-              <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-tealAccent transition-colors">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <span>rajatnit101@gmail.com</span>
-            </a>
-            <a href="tel:+918352070620" class="flex items-center gap-3 text-gray-200 hover:text-white transition-colors group">
-              <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-tealAccent transition-colors">
-                <i class="fas fa-phone"></i>
-              </div>
-              <span>+91 83520 70620</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:items-end justify-center">
-          <h3 class="text-xl font-medium mb-4 text-teal-100">Academic Profiles</h3>
-          <div class="flex flex-col gap-3 w-full md:w-auto">
-            <a href="https://scholar.google.com/citations?user=Mpm2EIMAAAAJ&hl=en" target="_blank" class="px-6 py-3 bg-white/5 hover:bg-white/15 border border-white/20 rounded text-center transition-all flex items-center justify-center gap-2">
-              <i class="fas fa-graduation-cap"></i> Google Scholar
-            </a>
-            <a href="https://www.researchgate.net/profile/Rajat-Choudhary-3/publications" target="_blank" class="px-6 py-3 bg-white/5 hover:bg-white/15 border border-white/20 rounded text-center transition-all flex items-center justify-center gap-2">
-              <i class="fab fa-researchgate"></i> ResearchGate
-            </a>
-            <a href="https://www.linkedin.com/in/rajat-choudhary-680724368/" target="_blank" class="px-6 py-3 bg-white/5 hover:bg-white/15 border border-white/20 rounded text-center transition-all flex items-center justify-center gap-2">
-              <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-        <p>&copy; 2025 Rajat Choudhary. All rights reserved.</p>
-        <p class="mt-2 md:mt-0">Indian Institute of Technology Delhi</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Animation Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Mobile menu toggle
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-
-      // Close mobile menu on link click
-      const mobileLinks = menu.querySelectorAll('a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          menu.classList.add('hidden');
-        });
-      });
-
-      // Scroll Animation Observer
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      const elements = document.querySelectorAll('.animate-on-scroll');
-      elements.forEach(el => observer.observe(el));
-    });
-  </script>
 </body>
 </html>
-```eof
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

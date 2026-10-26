@@ -1,539 +1,443 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rajat Choudhary | Academic Research Profile | IIT Delhi</title>
-    
-    <!-- Tailwind CSS CDN for utility grid and layout spacing -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        oxford: '#002147',
-                        slateblue: '#1a365d',
-                        charcoal: '#1a202c',
-                        hairline: '#e2e8f0',
-                        accentblue: '#0056b3'
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajat Choudhary — Research Profile</title>
+  
+  <!-- Google Fonts for crisp academic typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 
-    <style>
-        /* ======= MANDATORY GLOBAL ZERO-ITALICS OVERRIDE ======= */
-        * {
-            box-sizing: border-box;
-            font-style: normal !important; /* STRICT: No italics across all elements */
-        }
+  <style>
+    /* ======= CSS Reset & Variables ======= -->
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* ======= BASE TYPOGRAPHY & CANVAS ======= */
-        body {
-            font-family: "Baskerville Old Face", "Times New Roman", Times, Georgia, serif;
-            background-color: #ffffff;
-            color: #1a202c;
-            font-size: 19px;
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
+    :root {
+      --primary: #0f2c59;      /* Academic Navy */
+      --secondary: #216ad9;    /* Accent Blue */
+      --text-main: #2d3748;    /* Dark Charcoal */
+      --text-muted: #4a5568;   /* Gray for metadata */
+      --bg-light: #f8fafc;     /* Off-white background */
+      --border-color: #e2e8f0; /* Subtle border */
+    }
 
-        /* Headings Hierarchy */
-        h1, h2, h3, h4 {
-            font-family: "Baskerville Old Face", "Times New Roman", Times, Georgia, serif;
-            font-weight: 700;
-        }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
+      background-color: #fff;
+      line-height: 1.6;
+      font-size: 16px;
+    }
 
-        /* H2 Section Headings: 28px, Oxford Navy Blue with fine hairline separator */
-        h2.section-heading {
-            font-size: 28px;
-            color: #002147;
-            font-weight: 700;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
-            margin-top: 52px;
-            margin-bottom: 24px;
-            letter-spacing: 0.01em;
-        }
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
 
-        /* H3 Subheadings: 22px, Deep Slate Blue */
-        h3.sub-heading {
-            font-size: 22px;
-            color: #1a365d;
-            font-weight: 700;
-            margin-top: 32px;
-            margin-bottom: 12px;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        /* Body Paragraphs: 19px, Line Height 1.8 */
-        p {
-            font-size: 19px;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            color: #1a202c;
-            text-align: justify;
-            text-justify: inter-word;
-        }
+    /* ======= Top Navigation Bar ======= -->
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        /* Top Navigation Links: 17px */
-        .nav-link {
-            color: #ffffff;
-            font-size: 17px;
-            padding: 6px 14px;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s ease, color 0.2s ease;
-            font-weight: 600;
-        }
-        .nav-link:hover {
-            color: #cce3de;
-            border-bottom: 2px solid #cce3de;
-        }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        /* Captions & Dates: 16px */
-        .caption-text, .date-text, .meta-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #4a5568;
-        }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
 
-        /* Links: Clean underline without boxy buttons */
-        a {
-            color: #0056b3;
-            text-decoration: none;
-            border-bottom: 1px solid #0056b3;
-            transition: color 0.15s ease, border-color 0.15s ease;
-        }
-        a:hover {
-            color: #002147;
-            border-bottom: 2px solid #002147;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
 
-        /* Bibliography Numbered Citation Styling */
-        ol.publication-list {
-            list-style-type: decimal;
-            margin-left: 1.8rem;
-            margin-bottom: 2rem;
-        }
-        ol.publication-list li {
-            font-size: 19px;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #1a202c;
-            padding-left: 0.5rem;
-        }
+    nav a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
 
-        /* Section Hairline Divider */
-        .section-hairline {
-            border: 0;
-            border-top: 1px solid #e2e8f0;
-            margin: 48px 0;
-        }
-    </style>
+    nav a:hover, nav a.active {
+      color: var(--primary);
+    }
+
+    /* ======= Main Academic Grid Layout ======= -->
+    .wrapper {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (max-width: 850px) {
+      .wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 1.5rem auto;
+      }
+    }
+
+    /* ======= Sidebar Profile Card ======= -->
+    aside.profile-sidebar {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      height: fit-content;
+      text-align: center;
+    }
+
+    .profile-sidebar img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.2rem;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .profile-sidebar h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-sidebar .title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-sidebar .dept {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-block {
+      text-align: left;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-block p {
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+    }
+
+    .contact-block strong {
+      color: var(--primary);
+      display: inline-block;
+      width: 65px;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      text-align: left;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.2rem;
+    }
+
+    .profile-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ======= Main Content Area ======= -->
+    main.content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    /* Research Interests Tags */
+    .interests-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: #eff6ff;
+      color: var(--secondary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid #dbeafe;
+    }
+
+    /* Academic Lists / Education / Experience */
+    .cv-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .cv-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .cv-item-title {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .cv-item-date {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .cv-item-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Publications List */
+    ol.pub-list {
+      padding-left: 1.2rem;
+    }
+
+    ol.pub-list li {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .gallery-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* ======= Footer ======= -->
+    footer {
+      max-width: 1100px;
+      margin: 4rem auto 2rem auto;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
-<body class="bg-white">
 
-    <!-- ======= 1. SINGLE TOP STICKY NAVIGATION BAR ======= -->
-    <nav class="sticky top-0 z-50 bg-[#002147] shadow-md border-b border-[#1a365d]">
-        <div class="max-w-[1040px] mx-auto px-6 py-3 flex flex-wrap items-center justify-between">
-            <a href="#" class="text-white font-bold text-lg tracking-wider border-none hover:border-none">
-                RAJAT CHOUDHARY
-            </a>
-            <div class="flex flex-wrap items-center space-x-2 sm:space-x-6">
-                <a href="#about" class="nav-link border-none">About</a>
-                <a href="#research" class="nav-link border-none">Research</a>
-                <a href="#education" class="nav-link border-none">Education</a>
-                <a href="#publications" class="nav-link border-none">Publications</a>
-                <a href="#gallery" class="nav-link border-none">Gallery</a>
-                <a href="#contact" class="nav-link border-none">Contact</a>
-            </div>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-brand">Rajat Choudhary</div>
+      <nav>
+        <ul>
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Grid Wrapper -->
+  <div class="wrapper">
+
+    <!-- Left Sidebar Profile Card -->
+    <aside class="profile-sidebar">
+      <img src="assets/fonts/P5.jpg" alt="Rajat Choudhary">
+      <h1>Rajat Choudhary</h1>
+      <div class="title">Ph.D. Candidate</div>
+      <div class="dept">Department of Water Resources Engineering<br>Indian Institute of Technology Delhi</div>
+
+      <div class="contact-block">
+        <p><strong>Email:</strong> <a href="mailto:rajatnit101@gmail.com">rajatnit101@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+918352070620">+91 8352070620</a></p>
+      </div>
+
+      <div class="profile-links">
+        <a href="https://scholar.google.com/citations?user=Mpm2EIMAAAAJ&hl=en" target="_blank">📊 Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Rajat-Choudhary-3/publications" target="_blank">📚 ResearchGate</a>
+        <a href="https://www.linkedin.com/in/rajat-choudhary-680724368/" target="_blank">💼 LinkedIn Profile</a>
+      </div>
+    </aside>
+
+    <!-- Right Main Content Area -->
+    <main class="content">
+
+      <!-- About Section -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I am a Ph.D. candidate in the Department of Water Resources Engineering at the Indian Institute of Technology Delhi (IIT Delhi). My research investigates the complex mechanics of hydrological extremes, atmospheric moisture transport, and basin-scale flood dynamics under changing climate regimes.
+        </p>
+        <p>
+          Prior to IIT Delhi, I completed my M.S. by Research from IIT Palakkad (with a semester exchange at IIT Madras) and my B.Tech in Civil Engineering from NIT Hamirpur.
+        </p>
+      </section>
+
+      <!-- Research Interests -->
+      <section id="research">
+        <h2>Research Interests</h2>
+        <div class="interests-tags">
+          <span class="tag">Atmospheric Moisture Transport</span>
+          <span class="tag">Hydrological Extremes & Floods</span>
+          <span class="tag">Climate Change Impact Assessment</span>
+          <span class="tag">Hydrological Modeling (SWAT)</span>
+          <span class="tag">Soil Moisture-Climate Interactions</span>
         </div>
-    </nav>
+      </section>
 
-    <!-- ======= 2. HERO SECTION ======= -->
-    <header class="relative w-full bg-cover bg-center py-20 px-6 text-center" 
-            style="background-image: linear-gradient(rgba(0, 33, 71, 0.88), rgba(0, 33, 71, 0.88)), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80');">
+      <!-- Education Section -->
+      <section id="education">
+        <h2>Education</h2>
         
-        <div class="max-w-[1040px] mx-auto flex flex-col items-center justify-center">
-            <!-- Centered 160px Circular Profile Photo -->
-            <img src="assets/fonts/P5.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';"
-                 alt="Rajat Choudhary Profile Picture" 
-                 class="w-[160px] h-[160px] object-cover rounded-full mb-6 border-2 border-white/80" />
-            
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-3 tracking-wide">
-                Rajat Choudhary
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-100 font-medium mb-2">
-                PhD Candidate in Water Resources Engineering
-            </p>
-            <p class="text-base md:text-lg text-slate-200 tracking-wide">
-                Department of Civil Engineering | Indian Institute of Technology Delhi
-            </p>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-item-title">Indian Institute of Technology (IIT) Delhi</span>
+            <span class="cv-item-date">Sep 2020 – Dec 2025</span>
+          </div>
+          <div class="cv-item-subtitle">Ph.D. in Water Resources Engineering</div>
         </div>
-    </header>
 
-    <!-- ======= 3. MAIN SPREAD EDITORIAL CONTENT (MAX-WIDTH 1040PX) ======= -->
-    <main class="max-w-[1040px] mx-auto px-6 py-8 bg-white">
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-item-title">Indian Institute of Technology (IIT) Palakkad</span>
+            <span class="cv-item-date">July 2018 – July 2020</span>
+          </div>
+          <div class="cv-item-subtitle">M.S. (Research) in Water Resources</div>
+        </div>
 
-        <!-- SECTION: ABOUT ME -->
-        <section id="about" class="scroll-mt-20">
-            <h2 class="section-heading">About Me</h2>
-            <p>
-                I am a PhD candidate in Water Resources Engineering at the Indian Institute of Technology Delhi (IIT Delhi), specializing in physical hydrology, monsoonal atmospheric processes, and hydro-climatological extremes. My research focuses on understanding the multi-scale atmospheric moisture transport dynamics that dictate extreme rainfall distribution and flood risk across South Asia using both data-driven diagnostic pipelines and process-based numerical models.
-            </p>
-            <p>
-                My academic foundation spans several premier engineering institutes in India. I completed my Bachelor of Technology (B.Tech) in Civil Engineering at the National Institute of Technology Hamirpur (NIT Hamirpur). I subsequently earned my M.S. by Research in Water Resources Engineering at the Indian Institute of Technology Palakkad (IIT Palakkad), during which I was selected for a competitive semester exchange program at the Indian Institute of Technology Madras (IIT Madras) to undertake advanced computational fluid dynamics and hydrological modeling coursework.
-            </p>
-            <p>
-                At IIT Delhi, my doctoral research bridges atmospheric physics and surface hydrology to unravel the spatial and temporal predictability of severe hydrometeorological events under climate variability.
-            </p>
-        </section>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-item-title">Indian Institute of Technology (IIT) Madras</span>
+            <span class="cv-item-date">July 2018 – Dec 2018</span>
+          </div>
+          <div class="cv-item-subtitle">Semester Exchange Program Coursework</div>
+        </div>
 
-        <hr class="section-hairline" />
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-item-title">National Institute of Technology (NIT) Hamirpur</span>
+            <span class="cv-item-date">July 2013 – June 2017</span>
+          </div>
+          <div class="cv-item-subtitle">B.Tech in Civil Engineering</div>
+        </div>
+      </section>
 
-        <!-- SECTION: RESEARCH DETAILS -->
-        <section id="research" class="scroll-mt-20">
-            <h2 class="section-heading">Research Details</h2>
-            
-            <p>
-                My primary research investigates the atmospheric moisture transport pathways that drive extreme precipitation and catastrophic flooding across major Indian river basins. Central to this inquiry is a rigorous diagnostic evaluation of a comprehensive 40-year daily historical hydro-climatological dataset spanning 1981 through 2020. 
-            </p>
+      <!-- Publications Section -->
+      <section id="publications">
+        <h2>Selected Publications</h2>
+        <ol class="pub-list">
+          <li>
+            <strong>Choudhary, R.</strong>, Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). Deciphering the changes in spatio-temporal characteristics of flood events across India. <em>Hydrological Sciences Journal</em>, 1–15.
+          </li>
+          <li>
+            <strong>Choudhary, R.</strong>, & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. <em>Environmental Earth Sciences</em>, 80(18).
+          </li>
+          <li>
+            Rajat, & Athira, P. (2021). Calibration of hydrological models considering process interdependence: A case study of SWAT model.
+          </li>
+        </ol>
+      </section>
 
-            <h3 class="sub-heading">Monsoonal Dynamics & Extreme Event Synchronization</h3>
-            <p>
-                Focusing on the June–July–August–September (JJAS) Indian Summer Monsoon season—with specialized emphasis on July weather dynamics when moisture convergence peaks—my work isolates high-threshold extreme precipitation events exceeding the 90th percentile. Using advanced non-linear event synchronization algorithms and lagged causality frameworks, I map the exact physical mechanisms through which atmospheric vapor fluxes transition into localized severe rainfall spells.
-            </p>
-
-            <h3 class="sub-heading">Global Climate Teleconnections & SST Reanalysis</h3>
-            <p>
-                To understand systemic drivers beyond continental boundaries, my research deciphers coupled ocean-atmosphere teleconnections linking Indian monsoon extremes to planetary climate modes. This includes quantifying phase dependencies and lagged correlations with the Pacific Decadal Oscillation (PDO), El Niño-Southern Oscillation (ENSO), Indian Ocean Dipole (IOD), Southern Annular Mode (SAM), Arctic Oscillation (AO), and North Atlantic Oscillation (NAO). 
-            </p>
-            <p>
-                Global Ocean Data Assimilation System (GODAS) Sea Surface Temperature (SST) reanalysis datasets are integrated into computational pipelines to track anomalous oceanic thermal signatures that precede atmospheric flux surges over South Asia.
-            </p>
-
-            <h3 class="sub-heading">Hydrological Modeling & SWAT Flux Accounting</h3>
-            <p>
-                Complementing data-driven analyses, I utilize the Soil and Water Assessment Tool (SWAT) to model catchment-scale water balances. My methodological contributions focus on process-interdependent calibration techniques that refine root zone soil moisture simulation. By explicitly accounting for soil moisture dynamics, my models improve the simulation accuracy of both surface runoff and subsurface hydrological fluxes during extreme monsoonal spells.
-            </p>
-        </section>
-
-        <hr class="section-hairline" />
-
-        <!-- SECTION: EDUCATION -->
-        <section id="education" class="scroll-mt-20">
-            <h2 class="section-heading">Education</h2>
-            
-            <div class="space-y-6 my-6">
-                <!-- IIT Delhi -->
-                <div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
-                        <h3 class="text-xl font-bold text-[#002147]">Indian Institute of Technology (IIT) Delhi</h3>
-                        <span class="date-text font-semibold text-[#1a365d]">Sep 2020 – Dec 2025</span>
-                    </div>
-                    <p class="text-lg font-semibold text-[#1a365d] mb-1">Ph.D. in Water Resources Engineering</p>
-                    <p class="text-[19px] text-[#1a202c]">
-                        Department of Civil Engineering. Doctoral research on atmospheric moisture transport, extreme monsoonal precipitation, and ocean-atmosphere teleconnections across Indian river basins.
-                    </p>
-                </div>
-
-                <div class="border-t border-[#e2e8f0] pt-4"></div>
-
-                <!-- IIT Palakkad -->
-                <div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
-                        <h3 class="text-xl font-bold text-[#002147]">Indian Institute of Technology (IIT) Palakkad</h3>
-                        <span class="date-text font-semibold text-[#1a365d]">July 2018 – July 2020</span>
-                    </div>
-                    <p class="text-lg font-semibold text-[#1a365d] mb-1">MS (Research) in Water Resources Engineering</p>
-                    <p class="text-[19px] text-[#1a202c]">
-                        Thesis focused on process interdependence in hydrological model calibration and root zone soil moisture simulation within the SWAT framework.
-                    </p>
-                </div>
-
-                <div class="border-t border-[#e2e8f0] pt-4"></div>
-
-                <!-- IIT Madras -->
-                <div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
-                        <h3 class="text-xl font-bold text-[#002147]">Indian Institute of Technology (IIT) Madras</h3>
-                        <span class="date-text font-semibold text-[#1a365d]">July 2018 – Dec 2018</span>
-                    </div>
-                    <p class="text-lg font-semibold text-[#1a365d] mb-1">MS Research Semester Exchange Program</p>
-                    <p class="text-[19px] text-[#1a202c]">
-                        Advanced coursework in computational surface water hydraulics, fluid mechanics, and stochastic hydrology.
-                    </p>
-                </div>
-
-                <div class="border-t border-[#e2e8f0] pt-4"></div>
-
-                <!-- NIT Hamirpur -->
-                <div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
-                        <h3 class="text-xl font-bold text-[#002147]">National Institute of Technology (NIT) Hamirpur</h3>
-                        <span class="date-text font-semibold text-[#1a365d]">July 2013 – June 2017</span>
-                    </div>
-                    <p class="text-lg font-semibold text-[#1a365d] mb-1">B.Tech in Civil Engineering</p>
-                    <p class="text-[19px] text-[#1a202c]">
-                        Four-year undergraduate degree program with specialized training in water resources engineering, hydraulics, and structural design.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-hairline" />
-
-        <!-- SECTION: PUBLICATIONS -->
-        <section id="publications" class="scroll-mt-20">
-            <h2 class="section-heading">Selected Publications</h2>
-            
-            <ol class="publication-list">
-                <li>
-                    Rajat, & Athira, P. (2021). Calibration of hydrological models considering process interdependence: A case study of SWAT model.
-                </li>
-                <li>
-                    Choudhary, R., & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. Environmental Earth Sciences, 80(18).
-                </li>
-                <li>
-                    Choudhary, R., Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). Deciphering the changes in spatio-temporal characteristics of flood events across India. Hydrological Sciences Journal, 1-15.
-                </li>
-            </ol>
-        </section>
-
-        <hr class="section-hairline" />
-
-        <!-- SECTION: SINGLE-ROW GALLERY (3 FIGURES) -->
-        <section id="gallery" class="scroll-mt-20">
-            <h2 class="section-heading">Field Visits & Conferences</h2>
-            <p class="mb-6">
-                Photographs from hydrological field measurements, environmental sensor installations, and academic conference presentations.
-            </p>
-
-            <!-- Single horizontal row of 3 figures, strictly no frames or shadow boxes -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-6">
-                <!-- Figure 1 -->
-                <div>
-                    <img src="field1.jpg" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80';"
-                         alt="Field visit during monsoon analysis" 
-                         class="w-full h-[220px] object-cover" />
-                    <p class="caption-text mt-3 text-left">
-                        Field visit to Ganga basin for hydrological data collection (2024).
-                    </p>
-                </div>
-
-                <!-- Figure 2 -->
-                <div>
-                    <img src="conference1.jpg" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80';"
-                         alt="Conference presentation" 
-                         class="w-full h-[220px] object-cover" />
-                    <p class="caption-text mt-3 text-left">
-                        Presented research findings at the International Conference on Water Resources (2023).
-                    </p>
-                </div>
-
-                <!-- Figure 3 -->
-                <div>
-                    <img src="field2.jpg" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80';"
-                         alt="Instrumentation setup" 
-                         class="w-full h-[220px] object-cover" />
-                    <p class="caption-text mt-3 text-left">
-                        Installing soil moisture sensors during pilot study in Kerala (2022).
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-hairline" />
-
-        <!-- SECTION: CONTACT -->
-        <section id="contact" class="scroll-mt-20 mb-12">
-            <h2 class="section-heading">Contact</h2>
-            <p class="mb-6">
-                For academic inquiries, publication reprints, or postdoctoral research opportunities, please feel free to reach out via email or connect through academic networks:
-            </p>
-
-            <div class="space-y-3 text-[19px]">
-                <p><strong>Email:</strong> <a href="mailto:rajaniti1101@gmail.com">rajaniti1101@gmail.com</a> | <a href="mailto:rajatnit101@gmail.com">rajatnit101@gmail.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+918351066720">+91 8351066720</a></p>
-                <p><strong>Academic Profiles:</strong> 
-                    <a href="https://scholar.google.com/citations?user=Mpm2EIMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> &nbsp;|&nbsp; 
-                    <a href="https://www.researchgate.net/profile/Rajat-Choudhary-3/publications" target="_blank" rel="noopener">ResearchGate</a> &nbsp;|&nbsp; 
-                    <a href="https://www.linkedin.com/in/rajat-choudhary-680724368/" target="_blank" rel="noopener">LinkedIn</a>
-                </p>
-                <p class="pt-2">
-                    <strong>Institutional Address:</strong><br />
-                    Department of Civil Engineering,<br />
-                    Indian Institute of Technology Delhi,<br />
-                    Hauz Khas, New Delhi - 110016, India.
-                </p>
-            </div>
-        </section>
+      <!-- Gallery Section -->
+      <section id="gallery">
+        <h2>Field Visits & Conferences</h2>
+        <p>Glimpses from field data collection and academic conferences.</p>
+        
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="field1.jpg" alt="Field visit">
+            <p>Ganga basin field study (2024)</p>
+          </div>
+          <div class="gallery-card">
+            <img src="conference1.jpg" alt="Conference presentation">
+            <p>International Water Resources Conference (2023)</p>
+          </div>
+          <div class="gallery-card">
+            <img src="field2.jpg" alt="Instrumentation setup">
+            <p>Soil moisture sensor setup, Kerala (2022)</p>
+          </div>
+        </div>
+      </section>
 
     </main>
+  </div>
 
-    <!-- ======= 4. FORMAL FOOTER ======= -->
-    <footer class="bg-[#002147] text-white py-8 px-6 border-t border-[#1a365d]">
-        <div class="max-w-[1040px] mx-auto text-center space-y-2">
-            <p class="text-lg tracking-wide font-semibold text-slate-100">
-                © 2025 Rajat Choudhary — Indian Institute of Technology Delhi
-            </p>
-            <p class="caption-text text-slate-300">
-                Department of Civil Engineering | Water Resources Engineering
-            </p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    © 2025 Rajat Choudhary • Department of Water Resources Engineering, IIT Delhi
+  </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajat Choudhary | Faculty & Research Profile</title>
+  <title>Rajat Choudhary | Ox-CSC-AI Fellow & Researcher Profile</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,8 @@
       --text-muted: #555555;
       --bg-body: #ffffff;
       --accent-color: #1d4ed8;
+      --flash-bg: #fdf8f6;       /* Soft academic tint for news */
+      --flash-border: #f97316;   /* Academic burnt orange accent */
     }
 
     body {
@@ -166,7 +168,79 @@
       color: #374151;
     }
 
-    /* Content Sections (No boxes, clean spacing) */
+    /* ======= Recent Updates / Flashing News Ticker Section ======= */
+    .news-section {
+      background: var(--flash-bg);
+      border-left: 4px solid var(--flash-border);
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 3rem;
+      border-radius: 0 4px 4px 0;
+      position: relative;
+    }
+
+    .news-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .news-header h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.2rem;
+      color: #9a3412;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .news-btn {
+      background: #ea580c;
+      color: white;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .news-btn:hover {
+      background: #c2410c;
+    }
+
+    .news-carousel {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .news-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .news-item {
+      min-width: 100%;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .news-date {
+      font-weight: 600;
+      color: #c2410c;
+      margin-right: 0.5rem;
+    }
+
+    /* Content Sections */
     section {
       margin-bottom: 3rem;
     }
@@ -225,15 +299,27 @@
       border-top: 1px solid #e5e7eb;
     }
 
-    /* Publications List */
-    ol.publications-list {
+    /* Publications & Conferences Lists */
+    ol.publications-list, ul.conferences-list {
       padding-left: 1.2rem;
       color: var(--text-muted);
     }
 
-    ol.publications-list li {
-      margin-bottom: 1rem;
+    ol.publications-list li, ul.conferences-list li {
+      margin-bottom: 1.1rem;
       font-size: 0.92rem;
+      text-align: justify;
+    }
+
+    .pub-tag {
+      font-size: 0.8rem;
+      background: #eef2f6;
+      color: #1e3a8a;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      margin-left: 0.3rem;
+      font-weight: 600;
+      display: inline-block;
     }
 
     /* ======= Interactive Sliding Gallery ======= */
@@ -247,12 +333,12 @@
       gap: 1.5rem;
       overflow-x: auto;
       scroll-behavior: smooth;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
       padding-bottom: 0.5rem;
     }
 
     .gallery-container::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
+      display: none;
     }
 
     .gallery-item {
@@ -275,7 +361,6 @@
       text-align: left;
     }
 
-    /* Gallery Navigation Buttons */
     .gallery-btn {
       position: absolute;
       top: 40%;
@@ -340,7 +425,7 @@
         display: none;
       }
       .gallery-btn {
-        display: none; /* use touch swipe on mobile */
+        display: none;
       }
     }
   </style>
@@ -348,10 +433,10 @@
 
 <body>
 
-  <!-- IIT Delhi Institutional Top Bar -->
+  <!-- Institutional Top Bar -->
   <div class="institute-banner">
-    <div>भारतीय प्रौद्योगिकी संस्थान दिल्ली • Indian Institute of Technology Delhi</div>
-    <span>Department of Civil Engineering</span>
+    <div>University of Oxford & Indian Institute of Technology Delhi</div>
+    <span>Department of Civil and Environmental Engineering</span>
   </div>
 
   <!-- Header Navigation -->
@@ -380,8 +465,8 @@
       </div>
       <div class="faculty-details">
         <h1>Dr. Rajat Choudhary</h1>
-        <div class="designation">Researcher / Faculty in Water Resources Engineering</div>
-        <div class="department">Department of Civil Engineering</div>
+        <div class="designation">Ox-CSC-AI Fellow, University of Oxford</div>
+        <div class="department">Department of Civil and Environmental Engineering</div>
         
         <div class="contact-grid">
           <div><strong>Office:</strong> Hydrology Lab, Room 204</div>
@@ -394,14 +479,38 @@
       </div>
     </div>
 
+    <!-- Recent Updates / Flashing News Section -->
+    <div class="news-section">
+      <div class="news-header">
+        <h2>⚡ Recent Updates & Announcements</h2>
+        <div class="news-controls">
+          <button class="news-btn" onclick="slideNews(-1)">&#10094;</button>
+          <button class="news-btn" onclick="slideNews(1)">&#10095;</button>
+        </div>
+      </div>
+      <div class="news-carousel">
+        <div class="news-track" id="newsTrack">
+          <div class="news-item">
+            <span class="news-date">[November 2026]:</span> New research paper accepted in <em>JGR: Atmospheres</em> titled "From Moisture Transport to Extreme Rainfall".
+          </div>
+          <div class="news-item">
+            <span class="news-date">[October 2026]:</span> Presented research findings on spatio-temporal flood characteristics at IAHS-2025.
+          </div>
+          <div class="news-item">
+            <span class="news-date">[Ongoing]:</span> Active research collaboration underway as an Ox-CSC-AI Fellow at the University of Oxford.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Overview / About Section -->
     <section id="about">
       <h2>Biography & Overview</h2>
       <p>
-        Dr. Rajat Choudhary specializes in Water Resources Engineering, hydroclimatology, and land-atmosphere interactions. His academic focus lies in uncovering how large-scale climate variability and atmospheric moisture transport dictate regional extreme precipitation regimes and catastrophic flood dynamics across Indian river basins.
+        Dr. Rajat Choudhary is currently an Ox-CSC-AI Fellow at the University of Oxford, specializing in Water Resources Engineering, hydroclimatology, and AI-driven land-atmosphere interactions. His academic focus lies in uncovering how large-scale climate variability and atmospheric moisture transport dictate regional extreme precipitation regimes and catastrophic flood dynamics across global river basins.
       </p>
       <p>
-        He completed his Ph.D. at the Indian Institute of Technology Delhi (IIT Delhi), an M.S. by Research from IIT Palakkad (with coursework at IIT Madras), and his undergraduate degree in Civil Engineering from NIT Hamirpur.
+        He completed his Ph.D. in Water Resources Engineering at the Indian Institute of Technology Delhi (IIT Delhi), an M.S. by Research from IIT Palakkad (with coursework at IIT Madras), and his undergraduate degree in Civil Engineering from NIT Hamirpur.
       </p>
     </section>
 
@@ -431,6 +540,11 @@
         </thead>
         <tbody>
           <tr>
+            <td><strong>Ox-CSC-AI Fellowship</strong></td>
+            <td>University of Oxford</td>
+            <td>Present</td>
+          </tr>
+          <tr>
             <td><strong>Ph.D.</strong> in Water Resources Engineering</td>
             <td>Indian Institute of Technology (IIT) Delhi</td>
             <td>2020 – 2025</td>
@@ -456,18 +570,40 @@
 
     <!-- Publications Section -->
     <section id="publications">
-      <h2>Selected Publications</h2>
+      <h2>Journal Publications</h2>
       <ol class="publications-list">
         <li>
-          <strong>Choudhary, R.</strong>, Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). Deciphering the changes in spatio-temporal characteristics of flood events across India. <em>Hydrological Sciences Journal</em>, 1–15.
+          Choudhary, R., & Dhanya, C. T. (2026). Associated influence of moisture sources and catchment drivers on the flood mechanism of a tropical basin. <em>Journal of Hydrology</em>, 672, 135363. <a href="https://doi.org/10.1016/j.jhydrol.2026.135363" target="_blank">https://doi.org/10.1016/j.jhydrol.2026.135363</a> <span class="pub-tag">Q1, Web of Science; IF: 7.3</span>
         </li>
         <li>
-          <strong>Choudhary, R.</strong>, & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. <em>Environmental Earth Sciences</em>, 80(18).
+          Choudhary, R., Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). Deciphering the changes in spatio-temporal characteristics of flood events across India. <em>Hydrological Sciences Journal</em>, 70(14), 2498-2512. <a href="https://doi.org/10.1080/02626667.2025.2551133" target="_blank">https://doi.org/10.1080/02626667.2025.2551133</a>. Featured Article. <span class="pub-tag">Q2, Web of Science; IF: 2.9</span>
         </li>
         <li>
-          Rajat, & Athira, P. (2021). Calibration of hydrological models considering process interdependence: A case study of SWAT model.
+          Rajat & Athira, P. (2021). Calibration of hydrological models considering process interdependence: a case study of SWAT model. <em>Environmental Modelling & Software</em>, 144, 105131. <a href="https://doi.org/10.1016/j.envsoft.2021.105131" target="_blank">https://doi.org/10.1016/j.envsoft.2021.105131</a>. <span class="pub-tag">Q1, Web of Science; IF: 5.2</span>
+        </li>
+        <li>
+          Choudhary, R., & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. <em>Environmental Earth Sciences</em>, 80(18), 620. <a href="https://doi.org/10.1007/s12665-021-09912-z" target="_blank">https://doi.org/10.1007/s12665-021-09912-z</a>. <span class="pub-tag">Q2, Web of Science; IF: 3.3</span>
+        </li>
+        <li>
+          Banad, S., Choudhary, R., Wei, Y., Patil, R. J., & Dhanya, C. T. (2026). Effects of climate change on ecologically sensitive flows in the Goulburn River Basin, Australia. <em>Hydrological Processes</em>, 40(8), e70666. <a href="https://doi.org/10.1002/hyp.70666" target="_blank">https://doi.org/10.1002/hyp.70666</a>. <span class="pub-tag">Q2, Web of Science; IF: 3.1</span>
+        </li>
+        <li>
+          Choudhary, R and Dhanya, C. T. (Accepted for Publication). From Moisture Transport to Extreme Rainfall: A Framework for Identifying Standalone Atmospheric Predictors and Mechanisms in a Flood-Prone Tropical Basin. <em>JGR: Atmospheres</em>. <span class="pub-tag">Q2, Web of Science; IF: 3.8</span>
         </li>
       </ol>
+
+      <h2 style="margin-top: 2rem;">Conference Proceedings</h2>
+      <ul class="conferences-list">
+        <li>
+          Choudhary, R. and Dhanya, C. T. (2025, October). Spatio-temporal characteristics of flooding over India and their links to moisture sources (IAHS-2025).
+        </li>
+        <li>
+          Dhanya, C. T. and Choudhary, R. (2024, December). On the Changing Characteristics of Flooding over India and the Moisture Sources. In <em>AGU Fall Meeting Abstracts</em> (Vol. 2024, pp. H14A-05).
+        </li>
+        <li>
+          Choudhary, R., Thulaseedharan Dhanya, C., & Gosain, A. K. (2023, May). Unravelling the sources of moisture for precipitation events in a flood-prone Indian basin. In <em>EGU General Assembly Conference Abstracts</em> (pp. EGU-9436).
+        </li>
+      </ul>
     </section>
 
     <!-- Field & Gallery Section with Sliding Controls -->
@@ -497,17 +633,37 @@
 
   <!-- Footer -->
   <footer>
-    <p>Department of Civil Engineering / Water Resources Group</p>
+    <p>Department of Civil and Environmental Engineering / Water Resources Group</p>
     <p>© 2025 Dr. Rajat Choudhary • Academic Faculty Profile</p>
   </footer>
 
-  <!-- Gallery Navigation Script -->
+  <!-- Scripts for News Ticker & Gallery Navigation -->
   <script>
+    // Gallery Scroll
     function scrollGallery(direction) {
       const container = document.getElementById('galleryContainer');
-      const scrollAmount = 300; // pixels to scroll per click
+      const scrollAmount = 300;
       container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
+
+    // News Ticker Slide
+    let currentNewsIndex = 0;
+    function slideNews(direction) {
+      const track = document.getElementById('newsTrack');
+      const items = track.getElementsByClassName('news-item');
+      currentNewsIndex += direction;
+      if (currentNewsIndex < 0) {
+        currentNewsIndex = items.length - 1;
+      } else if (currentNewsIndex >= items.length) {
+        currentNewsIndex = 0;
+      }
+      track.style.transform = `translateX(-${currentNewsIndex * 100}%)`;
+    }
+
+    // Optional: Auto-advance news every 6 seconds
+    setInterval(() => {
+      slideNews(1);
+    }, 6000);
   </script>
 
 </body>

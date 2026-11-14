@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajat Choudhary </title>
+  <title>Rajat Choudhary | Faculty & Research Profile</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -236,17 +236,33 @@
       font-size: 0.92rem;
     }
 
-    /* Gallery Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+    /* ======= Interactive Sliding Gallery ======= */
+    .gallery-wrapper {
+      position: relative;
       margin-top: 1rem;
+    }
+
+    .gallery-container {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox */
+      padding-bottom: 0.5rem;
+    }
+
+    .gallery-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .gallery-item {
+      min-width: 280px;
+      flex: 0 0 auto;
     }
 
     .gallery-item img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
       border-radius: 3px;
       border: 1px solid #e5e7eb;
@@ -257,6 +273,38 @@
       color: #6b7280;
       margin-top: 0.4rem;
       text-align: left;
+    }
+
+    /* Gallery Navigation Buttons */
+    .gallery-btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background: rgba(15, 44, 89, 0.85);
+      color: white;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+
+    .gallery-btn:hover {
+      background: var(--iitd-blue);
+    }
+
+    .gallery-btn.prev {
+      left: -18px;
+    }
+
+    .gallery-btn.next {
+      right: -18px;
     }
 
     /* Footer */
@@ -291,6 +339,9 @@
       nav ul {
         display: none;
       }
+      .gallery-btn {
+        display: none; /* use touch swipe on mobile */
+      }
     }
   </style>
 </head>
@@ -300,7 +351,7 @@
   <!-- IIT Delhi Institutional Top Bar -->
   <div class="institute-banner">
     <div>भारतीय प्रौद्योगिकी संस्थान दिल्ली • Indian Institute of Technology Delhi</div>
-    <span>Department of Civil and Environmental Engineering</span>
+    <span>Department of Civil Engineering</span>
   </div>
 
   <!-- Header Navigation -->
@@ -329,12 +380,13 @@
       </div>
       <div class="faculty-details">
         <h1>Dr. Rajat Choudhary</h1>
-        <div class="designation">Project Scientist</div>
-        <div class="department">Department of Civil and Environmental Engineering</div>
+        <div class="designation">Researcher / Faculty in Water Resources Engineering</div>
+        <div class="department">Department of Civil Engineering</div>
         
         <div class="contact-grid">
-          <div><strong>Office:</strong> Water Resources Engineering Laboratory (WREL) , Room 315</div>
+          <div><strong>Office:</strong> Hydrology Lab, Room 204</div>
           <div><strong>Email:</strong> rajatnit101@gmail.com</div>
+          <div><strong>Phone:</strong> +91 8352070620</div>
           <div><strong>Profiles:</strong> 
             <a href="https://scholar.google.com/citations?user=Mpm2EIMAAAAJ&hl=en" target="_blank">Google Scholar</a>
           </div>
@@ -346,56 +398,29 @@
     <section id="about">
       <h2>Biography & Overview</h2>
       <p>
-       Rajat's research explores the links between atmospheric moisture transport, extreme rainfall, and hydrological extremes. He completed his Ph.D. in the Department of Civil and Environmental Engineering at the Indian Institute of Technology Delhi (IIT Delhi), under the joint supervision of Prof. C. T. Dhanya and Prof. A. K. Gosain. His thesis, <strong>Tracking of Moisture Sources of Hydrological Extremes,</strong> examined the role of moisture transport in shaping hydrological extremes. His broader research interests include Indian summer monsoon dynamics, moisture source attribution, and the physical processes driving hydrological extremes. 
+        Dr. Rajat Choudhary specializes in Water Resources Engineering, hydroclimatology, and land-atmosphere interactions. His academic focus lies in uncovering how large-scale climate variability and atmospheric moisture transport dictate regional extreme precipitation regimes and catastrophic flood dynamics across Indian river basins.
+      </p>
+      <p>
+        He completed his Ph.D. at the Indian Institute of Technology Delhi (IIT Delhi), an M.S. by Research from IIT Palakkad (with coursework at IIT Madras), and his undergraduate degree in Civil Engineering from NIT Hamirpur.
+      </p>
     </section>
+
     <!-- Research Areas Section -->
-    <section id="research" style="text-align: justify;">
+    <section id="research">
       <h2>Research Focus & Areas</h2>
       <p>Current investigations center around process-based simulation, atmospheric tracking, and climate adaptation frameworks:</p>
       <ul class="research-list">
-        <li>Hydrological Extremes</li>
-        <li>Hydrological Modeling</li>
-        <li>Moisture tracking/Sources of Moisture</li>
-        <li>Indian Summer Monsoon</li>
+        <li>Atmospheric Moisture Transport & Vapor Flux</li>
+        <li>Hydrological Extremes & Extreme Floods</li>
+        <li>SWAT & Distributed Hydrological Modeling</li>
+        <li>Land Surface Processes & Soil Moisture Feedback</li>
+        <li>Climate Change Impact Assessment</li>
       </ul>
-
-      <!-- Interactive Sliding Image Gallery Container -->
-      <div style="position: relative; margin-top: 25px; max-width: 100%;">
-        
-        <!-- Left Arrow Button -->
-        <button onclick="document.getElementById('researchSlider').scrollBy({ left: -300, behavior: 'smooth' })" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;">&#10094;</button>
-
-        <!-- Sliding Track -->
-        <div id="researchSlider" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; scrollbar-width: none; scroll-behavior: smooth; padding: 0 40px;">
-          
-          <!-- Image 1 -->
-          <div style="flex: 0 0 280px; scroll-snap-align: start; text-align: center;">
-            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=80" alt="Hydrological Extremes" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px;">
-            <p style="font-size: 0.85rem; color: #555; margin-top: 6px;">Hydrological Extremes</p>
-          </div>
-
-          <!-- Image 2 -->
-          <div style="flex: 0 0 280px; scroll-snap-align: start; text-align: center;">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Moisture Tracking" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px;">
-            <p style="font-size: 0.85rem; color: #555; margin-top: 6px;">Moisture Tracking</p>
-          </div>
-
-          <!-- Image 3 -->
-          <div style="flex: 0 0 280px; scroll-snap-align: start; text-align: center;">
-            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Basin & Monsoon Modeling" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px;">
-            <p style="font-size: 0.85rem; color: #555; margin-top: 6px;">Basin & Monsoon Modeling</p>
-          </div>
-
-        </div>
-
-        <!-- Right Arrow Button -->
-        <button onclick="document.getElementById('researchSlider').scrollBy({ left: 300, behavior: 'smooth' })" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;">&#10095;</button>
-
-      </div>
     </section>
+
     <!-- Academic Background -->
     <section id="academics">
-      <h2>Education</h2>
+      <h2>Educational Background</h2>
       <table class="academic-table">
         <thead>
           <tr>
@@ -428,43 +453,43 @@
         </tbody>
       </table>
     </section>
+
     <!-- Publications Section -->
     <section id="publications">
       <h2>Selected Publications</h2>
-      <ol class="publications-list" style="text-align: justify;">
+      <ol class="publications-list">
         <li>
-          <strong>Choudhary, R.</strong>, & Dhanya, C. T. (2026). <a href="https://doi.org/10.1016/j.jhydrol.2026.135363" style="color: #0066cc; text-decoration: none;" target="_blank">Associated influence of moisture sources and catchment drivers on the flood mechanism of a tropical basin</a>. Journal of Hydrology, 672, 135363.
+          <strong>Choudhary, R.</strong>, Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). Deciphering the changes in spatio-temporal characteristics of flood events across India. <em>Hydrological Sciences Journal</em>, 1–15.
         </li>
         <li>
-          <strong>Choudhary, R.</strong>, Dhanya, C. T., Gosain, A. K., & Chander, S. (2025). <a href="https://doi.org/10.1080/02626667.2025.2551133" style="color: #0066cc; text-decoration: none;" target="_blank">Deciphering the changes in spatio-temporal characteristics of flood events across India</a>. Hydrological Sciences Journal, 70(14), 2498-2512. <strong>Featured Article</strong>.
+          <strong>Choudhary, R.</strong>, & Athira, P. (2021). Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes. <em>Environmental Earth Sciences</em>, 80(18).
         </li>
         <li>
-          <strong>Rajat</strong> & Athira, P. (2021). <a href="https://doi.org/10.1016/j.envsoft.2021.105131" style="color: #0066cc; text-decoration: none;" target="_blank">Calibration of hydrological models considering process interdependence: a case study of SWAT model</a>. Environmental Modelling & Software, 144, 105131.
-        </li>
-        <li>
-          <strong>Choudhary, R.</strong>, & Athira, P. (2021). <a href="https://doi.org/10.1007/s12665-021-09912-z" style="color: #0066cc; text-decoration: none;" target="_blank">Effect of root zone soil moisture on the SWAT model simulation of surface and subsurface hydrological fluxes</a>. Environmental Earth Sciences, 80(18), 620.
-        </li>
-        <li>
-          Banad, S., <strong>Choudhary, R.</strong>, Wei, Y., Patil, R. J., & Dhanya, C. T. (2026). <a href="https://doi.org/10.1002/hyp.70666" style="color: #0066cc; text-decoration: none;" target="_blank">Effects of climate change on ecologically sensitive flows in the Goulburn River Basin, Australia</a>. Hydrological Processes, 40(8), e70666.
+          Rajat, & Athira, P. (2021). Calibration of hydrological models considering process interdependence: A case study of SWAT model.
         </li>
       </ol>
     </section>
-    <!-- Field & Gallery Section -->
+
+    <!-- Field & Gallery Section with Sliding Controls -->
     <section id="gallery">
       <h2>Field Observations & Conferences</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="field1.jpg" alt="Field visit">
-          <p>Ganga basin hydrological data collection campaign (2024).</p>
+      <div class="gallery-wrapper">
+        <button class="gallery-btn prev" onclick="scrollGallery(-1)">&#10094;</button>
+        <div class="gallery-container" id="galleryContainer">
+          <div class="gallery-item">
+            <img src="field1.jpg" alt="Field visit">
+            <p>Ganga basin hydrological data collection campaign (2024).</p>
+          </div>
+          <div class="gallery-item">
+            <img src="conference1.jpg" alt="Conference">
+            <p>Research presentation at the International Water Resources Conference (2023).</p>
+          </div>
+          <div class="gallery-item">
+            <img src="field2.jpg" alt="Instrumentation">
+            <p>Soil moisture sensor deployment during pilot study in Kerala (2022).</p>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="conference1.jpg" alt="Conference">
-          <p>Research presentation at the International Water Resources Conference (2023).</p>
-        </div>
-        <div class="gallery-item">
-          <img src="field2.jpg" alt="Instrumentation">
-          <p>Soil moisture sensor deployment during pilot study in Kerala (2022).</p>
-        </div>
+        <button class="gallery-btn next" onclick="scrollGallery(1)">&#10095;</button>
       </div>
     </section>
 
@@ -475,6 +500,15 @@
     <p>Department of Civil Engineering / Water Resources Group</p>
     <p>© 2025 Dr. Rajat Choudhary • Academic Faculty Profile</p>
   </footer>
+
+  <!-- Gallery Navigation Script -->
+  <script>
+    function scrollGallery(direction) {
+      const container = document.getElementById('galleryContainer');
+      const scrollAmount = 300; // pixels to scroll per click
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>

@@ -24,8 +24,8 @@
       --text-muted: #555555;
       --bg-body: #ffffff;
       --accent-color: #1d4ed8;
-      --flash-bg: #fdf8f6;       /* Soft academic tint for news */
-      --flash-border: #f97316;   /* Academic burnt orange accent */
+      --news-bg: #f8fafc;        /* Clean neutral background matching theme */
+      --news-border: #0f2c59;    /* Matching IIT Delhi navy accent */
     }
 
     body {
@@ -168,10 +168,10 @@
       color: #374151;
     }
 
-    /* ======= Recent Updates / Flashing News Ticker Section ======= */
+    /* ======= Recent Updates / News Section (Harmonized) ======= */
     .news-section {
-      background: var(--flash-bg);
-      border-left: 4px solid var(--flash-border);
+      background: var(--news-bg);
+      border-left: 4px solid var(--news-border);
       padding: 1.5rem 1.8rem;
       margin-bottom: 3rem;
       border-radius: 0 4px 4px 0;
@@ -188,7 +188,7 @@
     .news-header h2 {
       font-family: 'Merriweather', serif;
       font-size: 1.2rem;
-      color: #9a3412;
+      color: var(--iitd-blue);
       border: none;
       padding: 0;
       margin: 0;
@@ -200,7 +200,7 @@
     }
 
     .news-btn {
-      background: #ea580c;
+      background: var(--iitd-blue);
       color: white;
       border: none;
       width: 28px;
@@ -215,7 +215,7 @@
     }
 
     .news-btn:hover {
-      background: #c2410c;
+      background: #1e3a8a;
     }
 
     .news-carousel {
@@ -236,7 +236,7 @@
 
     .news-date {
       font-weight: 600;
-      color: #c2410c;
+      color: var(--iitd-blue);
       margin-right: 0.5rem;
     }
 
@@ -435,7 +435,7 @@
 
   <!-- Institutional Top Bar -->
   <div class="institute-banner">
-    <div> Indian Institute of Technology Delhi भारतीय प्रौद्योगिकी संस्थान दिल्ली</div>
+    <div>University of Oxford & Indian Institute of Technology Delhi</div>
     <span>Department of Civil and Environmental Engineering</span>
   </div>
 
@@ -466,11 +466,12 @@
       <div class="faculty-details">
         <h1>Dr. Rajat Choudhary</h1>
         <div class="designation">Ox-CSC-AI Fellow, University of Oxford</div>
-        <div class="department">Project Scientist, Department of Civil and Environmental Engineering</div>
+        <div class="department">Department of Civil and Environmental Engineering</div>
         
         <div class="contact-grid">
-          <div><strong>Office:</strong>Room 315, Block 5, Water Resources Engineering Lab,Department of Civil and Environmental Engineering, IIT Delhi </div>
+          <div><strong>Office:</strong> Hydrology Lab, Room 204</div>
           <div><strong>Email:</strong> rajatnit101@gmail.com</div>
+          <div><strong>Phone:</strong> +91 8352070620</div>
           <div><strong>Profiles:</strong> 
             <a href="https://scholar.google.com/citations?user=Mpm2EIMAAAAJ&hl=en" target="_blank">Google Scholar</a>
           </div>
@@ -478,10 +479,10 @@
       </div>
     </div>
 
-    <!-- Recent Updates / Flashing News Section -->
+    <!-- Recent Updates / Flashing News Section (Harmonized) -->
     <div class="news-section">
       <div class="news-header">
-        <h2>⚡ Recent Updates & Announcements</h2>
+        <h2>Recent Updates & Announcements</h2>
         <div class="news-controls">
           <button class="news-btn" onclick="slideNews(-1)">&#10094;</button>
           <button class="news-btn" onclick="slideNews(1)">&#10095;</button>
@@ -659,7 +660,7 @@
       track.style.transform = `translateX(-${currentNewsIndex * 100}%)`;
     }
 
-    // Optional: Auto-advance news every 6 seconds
+    // Auto-advance news every 6 seconds
     setInterval(() => {
       slideNews(1);
     }, 6000);
